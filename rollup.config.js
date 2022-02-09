@@ -43,8 +43,8 @@ export default {
 		copy({
 			targets: [
 				{ src: "node_modules/reveal.js/dist/reveal.css", dest: "public/build" },
-				{ src: "node_modules/reveal.js/dist/theme/black.css", dest: "public/build" },
-				{ src: "node_modules/reveal.js/dist/theme/fonts", dest: "public/build" }
+				{ src: "node_modules/reveal.js/dist/reset.css", dest: "public/build" },
+				{ src: "node_modules/reveal.js/dist/theme", dest: "public/build" }
 			]
 		}),
 		svelte({

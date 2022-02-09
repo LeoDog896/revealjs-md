@@ -14,16 +14,10 @@
 </script>
 <div class="reveal">
 	<div class="slides">
-		<section data-markdown>
-			<textarea data-template>
-			  ## Slide 1
-			  A paragraph with some text.
-			  ---
-			  ## Slide 2
-			  ---
-			  ## Slide 3
-			</textarea>
-		</section>
+		<div class="slides">
+			<section data-background-color="#0c2f5c">Slide 1</section>
+			<section data-background-color="#0c2f5c">Slide 2</section>
+		  </div>
 	</div>
 </div>
 <Tailwindcss />
