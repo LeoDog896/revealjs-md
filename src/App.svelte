@@ -1,22 +1,29 @@
 <script lang="ts">
 	import Tailwindcss from "./Tailwindcss.svelte"
 	import Reveal from 'reveal.js';
-	import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
+	import { marked } from "marked"
 	import { onMount } from "svelte"
 
+	const text = `
+	# Test 1
+	%
+	# Test 2
+	`
+
 	onMount(() => {
-		let deck = new Reveal({
-			plugins: [ Markdown ]
-		})
+		let deck = new Reveal()
 
 		deck.initialize();
 	})
 </script>
 <div class="reveal">
 	<div class="slides">
-		<div class="slides">
-			<section data-background-color="#0c2f5c">Slide 1</section>
-			<section data-background-color="#0c2f5c">Slide 2</section>
+		<div class="slides text-white text-4xl">
+			{#each text.split("%") as slide}
+				<section data-background-color="#0c2f5c">
+					{@html marked.parse(slide)}
+				</section>
+			{/each}
 		  </div>
 	</div>
 </div>
