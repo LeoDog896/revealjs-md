@@ -5,10 +5,11 @@
 	import { onMount } from "svelte"
 
 	const text = `
-	# Test 1
-	%
-	# Test 2
-	`
+# Test 1
+## The chronicles
+woah
+%%
+# Test 2`
 
 	onMount(() => {
 		let deck = new Reveal()
@@ -18,8 +19,8 @@
 </script>
 <div class="reveal">
 	<div class="slides">
-		<div class="slides text-white text-4xl">
-			{#each text.split("%") as slide}
+		<div class="slides text-white leading-[4rem]">
+			{#each text.split("%%") as slide}
 				<section data-background-color="#0c2f5c">
 					{@html marked.parse(slide)}
 				</section>
@@ -27,4 +28,17 @@
 		  </div>
 	</div>
 </div>
+<style global>
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 2rem;
+	}
+</style>
 <Tailwindcss />
